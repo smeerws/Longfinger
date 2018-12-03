@@ -19,8 +19,6 @@ public class LeftPageScript : MonoBehaviour {
 
     private States myState;
 
-
-
 	// Use this for initialization
 	void Start () {
 
@@ -33,33 +31,30 @@ public class LeftPageScript : MonoBehaviour {
         {
             question();
         }
-            else if (myState == States.trueState) {
-                trueState ();
-            }
-            else if (myState == States.falseState)
-            {
-                falseState ();
-            }
+        else if (myState == States.trueState) {
+            trueState ();
+        }
+        else if (myState == States.falseState)
+        {
+            falseState ();
+        }
         }
 		
-	}
-
-
     void OnEnable()
     {
         AButton.onClick.AddListener(delegate{option1 = true;});
-        BButton.onClick.AddListener(delegate {option2 = true;});
+        BButton.onClick.AddListener(delegate{option2 = true;});
     }
 
 
     void question (){
         text.text = "Ice is cold.";
 
-        if(option1 == true){myState = States.trueState} 
+        if(option1 == true){ myState = States.trueState; } 
         else if (option2 == true){myState = States.falseState;}
     }
 
-    void trueState(
+    void trueState()
     {
         text.text = "Correct!";
     }
